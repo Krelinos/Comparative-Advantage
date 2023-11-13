@@ -1,0 +1,16 @@
+{
+	"dialog": {
+		"start": "1a0"
+		,"1a0": {
+			"text": "words words words"
+			,"next": "1a1"
+		}
+		,"1a1": {
+			"text": "This sentence is a bit longer, at a length of 60 characters."
+			,"next": "1a2"
+		}
+		,"1a2": {
+			"text": "This one is shorter, at 38 characters."
+		}
+	}
+}

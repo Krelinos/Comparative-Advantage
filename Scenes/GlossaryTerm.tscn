@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/defaultfont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/UI/UI.png" type="Texture" id=2]
+
+[node name="GlossaryTerm" type="Button"]
+anchor_bottom = 0.027
+margin_right = 248.0
+margin_bottom = 15.8
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+button_mask = 0
+text = "Glossary Term"
+flat = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 4.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 15.0
+texture = ExtResource( 2 )
+region_rect = Rect2( 209, 66, 46, 13 )
+patch_margin_left = 2
+patch_margin_top = 10
+patch_margin_right = 2
+patch_margin_bottom = 11

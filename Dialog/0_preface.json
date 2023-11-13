@@ -1,0 +1,33 @@
+{
+	"dialog": {
+		"start": "0",
+		"0": {
+			"text": "Hi, V here! Welcome to my Comparative Advantage application, designed to assist in teaching Ms. Tillotson's highschool senior class.
+
+A few things before moving on (press space or enter/return to continue):"
+			,"next": "1"
+		}
+		,"1": {
+			"text": "Important concepts will be depicted as [url][color=#E49F5A]highlighted text[/color][/url] within this text box."
+			,"next": "2"
+		}
+		,"2": {
+			"text": "On the left of this window is a glossary that stores these concepts. Hovering over the word will show the definition. It will be automatically appended to as more concepts are exposed to you."
+			,"next": "3"
+		}
+		,"3": {
+			"text": "Accessibility and other neat things can be viewed by clicking on the Menu button at the bottom left."
+			,"next": "4"
+		}
+		,"4": {
+			"text": "If your progress is missing, then your browser cookies got irrecoverably wiped at some point. This is out of this application's control."
+			,"next": "5"
+		}
+		,"5": {
+			"text": "Finally, you can get started by clicking on '1.a - Output' or any scenario/lesson at the bottom left.
+
+Enjoy! <3"
+		}
+	}
+	,"questions":{}
+}

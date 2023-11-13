@@ -1,0 +1,554 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Assets/UI/UI.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Theme.tres" type="Theme" id=2]
+[ext_resource path="res://Assets/UI/bgGradient.tres" type="Texture" id=3]
+[ext_resource path="res://Assets/UI/gdb-keyboard-2.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/ScenarioButtons.cs" type="Script" id=5]
+[ext_resource path="res://Scripts/Workspace.cs" type="Script" id=6]
+[ext_resource path="res://Scripts/Glossary.cs" type="Script" id=7]
+[ext_resource path="res://Assets/defaultfont.tres" type="DynamicFont" id=8]
+
+[sub_resource type="StyleBoxTexture" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 4 )
+region = Rect2( 256, 144, 32, 16 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 4 )
+region = Rect2( 256, 256, 32, 16 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 4 )
+region = Rect2( 496, 0, 32, 31 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 4 )
+region = Rect2( 496, 32, 32, 31 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 4 )
+region = Rect2( 96, 208, 112, 16 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 4 )
+region = Rect2( 96, 320, 112, 16 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ) ],
+"loop": true,
+"name": "enter",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "lmb",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "space",
+"speed": 5.0
+} ]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.0
+margin_right = -1.0
+theme = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+texture = ExtResource( 3 )
+expand = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Menus" type="VBoxContainer" parent="TextureRect/HBoxContainer"]
+margin_right = 256.0
+margin_bottom = 617.0
+rect_min_size = Vector2( 256, 0 )
+
+[node name="Glossary" type="NinePatchRect" parent="TextureRect/HBoxContainer/Menus"]
+margin_right = 256.0
+margin_bottom = 385.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 15.0
+texture = ExtResource( 1 )
+region_rect = Rect2( 416, 80, 48, 48 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+script = ExtResource( 7 )
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/HBoxContainer/Menus/Glossary"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 4
+custom_constants/margin_top = 4
+custom_constants/margin_left = 4
+custom_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/HBoxContainer/Menus/Glossary/MarginContainer"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 252.0
+margin_bottom = 4.0
+size_flags_vertical = 2
+custom_constants/separation = 0
+
+[node name="ScenarioButtons" type="NinePatchRect" parent="TextureRect/HBoxContainer/Menus"]
+margin_top = 389.0
+margin_right = 256.0
+margin_bottom = 575.0
+rect_min_size = Vector2( 0, 186 )
+texture = ExtResource( 1 )
+region_rect = Rect2( 416, 80, 48, 48 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+script = ExtResource( 5 )
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/HBoxContainer/Menus/ScenarioButtons"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 36.0
+custom_constants/margin_right = 5
+custom_constants/margin_top = 5
+custom_constants/margin_left = 5
+custom_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/HBoxContainer/Menus/ScenarioButtons/MarginContainer"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 251.0
+margin_bottom = 217.0
+size_flags_vertical = 3
+
+[node name="Preface" type="NinePatchRect" parent="TextureRect/HBoxContainer/Menus/ScenarioButtons/MarginContainer/VBoxContainer"]
+margin_right = 246.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 0, 32 )
+size_flags_horizontal = 3
+size_flags_vertical = 0
+texture = ExtResource( 1 )
+region_rect = Rect2( 128, 65, 16, 15 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 4
+
+[node name="Button" type="Button" parent="TextureRect/HBoxContainer/Menus/ScenarioButtons/MarginContainer/VBoxContainer/Preface"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 8 )
+enabled_focus_mode = 0
+text = "0 - Preface"
+flat = true
+align = 0
+
+[node name="1_a_Output" type="NinePatchRect" parent="TextureRect/HBoxContainer/Menus/ScenarioButtons/MarginContainer/VBoxContainer"]
+margin_top = 36.0
+margin_right = 246.0
+margin_bottom = 68.0
+rect_min_size = Vector2( 0, 32 )
+size_flags_horizontal = 3
+size_flags_vertical = 0
+texture = ExtResource( 1 )
+region_rect = Rect2( 128, 65, 16, 15 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 4
+
+[node name="Button" type="Button" parent="TextureRect/HBoxContainer/Menus/ScenarioButtons/MarginContainer/VBoxContainer/1_a_Output"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+focus_mode = 0
+theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 8 )
+enabled_focus_mode = 0
+text = "1.a - Output"
+flat = true
+align = 0
+
+[node name="Input" type="NinePatchRect" parent="TextureRect/HBoxContainer/Menus/ScenarioButtons/MarginContainer/VBoxContainer"]
+margin_top = 72.0
+margin_right = 246.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 0, 32 )
+size_flags_horizontal = 3
+size_flags_vertical = 0
+texture = ExtResource( 1 )
+region_rect = Rect2( 128, 65, 16, 15 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 4
+
+[node name="Button" type="Button" parent="TextureRect/HBoxContainer/Menus/ScenarioButtons/MarginContainer/VBoxContainer/Input"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 8 )
+enabled_focus_mode = 0
+text = "1.b - Input"
+flat = true
+align = 0
+
+[node name="Terms of Trade" type="NinePatchRect" parent="TextureRect/HBoxContainer/Menus/ScenarioButtons/MarginContainer/VBoxContainer"]
+margin_top = 108.0
+margin_right = 246.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 0, 32 )
+size_flags_horizontal = 3
+size_flags_vertical = 0
+texture = ExtResource( 1 )
+region_rect = Rect2( 128, 65, 16, 15 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 4
+
+[node name="Button" type="Button" parent="TextureRect/HBoxContainer/Menus/ScenarioButtons/MarginContainer/VBoxContainer/Terms of Trade"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 8 )
+enabled_focus_mode = 0
+text = "2 - Terms of Trade"
+flat = true
+align = 0
+
+[node name="Practice Questions" type="NinePatchRect" parent="TextureRect/HBoxContainer/Menus/ScenarioButtons/MarginContainer/VBoxContainer"]
+margin_top = 144.0
+margin_right = 246.0
+margin_bottom = 176.0
+rect_min_size = Vector2( 0, 32 )
+size_flags_horizontal = 3
+size_flags_vertical = 0
+texture = ExtResource( 1 )
+region_rect = Rect2( 128, 65, 16, 15 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 4
+
+[node name="Button" type="Button" parent="TextureRect/HBoxContainer/Menus/ScenarioButtons/MarginContainer/VBoxContainer/Practice Questions"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 8 )
+enabled_focus_mode = 0
+text = "3 - Practice Questions"
+flat = true
+align = 0
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="TextureRect/HBoxContainer/Menus"]
+margin_top = 579.0
+margin_right = 256.0
+margin_bottom = 617.0
+rect_min_size = Vector2( 0, 38 )
+texture = ExtResource( 1 )
+region_rect = Rect2( 464, 128, 16, 16 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/HBoxContainer/Menus/NinePatchRect2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+custom_constants/margin_right = 5
+custom_constants/margin_top = 5
+custom_constants/margin_left = 5
+custom_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/HBoxContainer/Menus/NinePatchRect2/MarginContainer"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 251.0
+margin_bottom = 33.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="TextureRect/HBoxContainer/Menus/NinePatchRect2/MarginContainer/HBoxContainer"]
+margin_right = 246.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 1 )
+region_rect = Rect2( 128, 65, 16, 15 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 4
+
+[node name="Options" type="Button" parent="TextureRect/HBoxContainer/Menus/NinePatchRect2/MarginContainer/HBoxContainer/NinePatchRect2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 8 )
+text = "Menu"
+flat = true
+
+[node name="Workspace" type="VBoxContainer" parent="TextureRect/HBoxContainer"]
+margin_left = 260.0
+margin_right = 1366.0
+margin_bottom = 617.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+script = ExtResource( 6 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="TextureRect/HBoxContainer/Workspace"]
+margin_right = 1106.0
+margin_bottom = 617.0
+size_flags_vertical = 3
+texture = ExtResource( 1 )
+region_rect = Rect2( 416, 80, 48, 48 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/HBoxContainer/Workspace/NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_vertical = 3
+custom_constants/margin_right = 4
+custom_constants/margin_top = 4
+custom_constants/margin_left = 4
+custom_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/HBoxContainer/Workspace/NinePatchRect/MarginContainer"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 1102.0
+margin_bottom = 613.0
+custom_constants/separation = 0
+alignment = 2
+
+[node name="Interactives" type="MarginContainer" parent="TextureRect/HBoxContainer/Workspace/NinePatchRect/MarginContainer/VBoxContainer"]
+margin_right = 1098.0
+margin_bottom = 304.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/HBoxContainer/Workspace/NinePatchRect/MarginContainer/VBoxContainer/Interactives"]
+margin_right = 1098.0
+margin_bottom = 304.0
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/HBoxContainer/Workspace/NinePatchRect/MarginContainer/VBoxContainer/Interactives/HBoxContainer"]
+margin_right = 547.0
+margin_bottom = 304.0
+size_flags_horizontal = 3
+custom_constants/margin_right = 4
+custom_constants/margin_top = 4
+custom_constants/margin_left = 4
+custom_constants/margin_bottom = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="TextureRect/HBoxContainer/Workspace/NinePatchRect/MarginContainer/VBoxContainer/Interactives/HBoxContainer/MarginContainer"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 543.0
+margin_bottom = 300.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="QuestionBox" type="MarginContainer" parent="TextureRect/HBoxContainer/Workspace/NinePatchRect/MarginContainer/VBoxContainer/Interactives/HBoxContainer/MarginContainer/PanelContainer"]
+margin_right = 539.0
+margin_bottom = 296.0
+custom_constants/margin_right = 2
+custom_constants/margin_top = 2
+custom_constants/margin_left = 2
+custom_constants/margin_bottom = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/HBoxContainer/Workspace/NinePatchRect/MarginContainer/VBoxContainer/Interactives/HBoxContainer/MarginContainer/PanelContainer/QuestionBox"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 537.0
+margin_bottom = 294.0
+custom_constants/margin_bottom = 32
+
+[node name="Submit" type="Button" parent="TextureRect/HBoxContainer/Workspace/NinePatchRect/MarginContainer/VBoxContainer/Interactives/HBoxContainer/MarginContainer/PanelContainer/QuestionBox"]
+margin_left = 2.0
+margin_top = 269.0
+margin_right = 71.0
+margin_bottom = 294.0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "Submit"
+
+[node name="CenterContainer" type="CenterContainer" parent="TextureRect/HBoxContainer/Workspace/NinePatchRect/MarginContainer/VBoxContainer/Interactives/HBoxContainer"]
+margin_left = 551.0
+margin_right = 1098.0
+margin_bottom = 304.0
+size_flags_horizontal = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="TextureRect/HBoxContainer/Workspace/NinePatchRect/MarginContainer/VBoxContainer/Interactives/HBoxContainer/CenterContainer"]
+margin_left = 125.0
+margin_top = 113.0
+margin_right = 421.0
+margin_bottom = 190.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="TextureRect/HBoxContainer/Workspace/NinePatchRect/MarginContainer/VBoxContainer/Interactives/HBoxContainer/CenterContainer/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 289.0
+margin_bottom = 70.0
+text = "This is an image to be used to
+help assist in depicting Output
+of two separate entities."
+
+[node name="DialogBoxContainer" type="NinePatchRect" parent="TextureRect/HBoxContainer/Workspace/NinePatchRect/MarginContainer/VBoxContainer"]
+margin_top = 304.0
+margin_right = 1098.0
+margin_bottom = 609.0
+rect_pivot_offset = Vector2( 1035, 140 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+texture = ExtResource( 1 )
+region_rect = Rect2( 464, 128, 16, 16 )
+patch_margin_left = 4
+patch_margin_top = 5
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/HBoxContainer/Workspace/NinePatchRect/MarginContainer/VBoxContainer/DialogBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 7
+custom_constants/margin_top = 7
+custom_constants/margin_left = 12
+custom_constants/margin_bottom = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/HBoxContainer/Workspace/NinePatchRect/MarginContainer/VBoxContainer/DialogBoxContainer/MarginContainer"]
+margin_left = 12.0
+margin_top = 7.0
+margin_right = 1091.0
+margin_bottom = 305.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 2
+
+[node name="DialogBox" type="RichTextLabel" parent="TextureRect/HBoxContainer/Workspace/NinePatchRect/MarginContainer/VBoxContainer/DialogBoxContainer/MarginContainer/VBoxContainer"]
+margin_right = 1079.0
+margin_bottom = 266.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+bbcode_enabled = true
+meta_underlined = false
+scroll_following = true
+
+[node name="PanelContainer" type="PanelContainer" parent="TextureRect/HBoxContainer/Workspace/NinePatchRect/MarginContainer/VBoxContainer/DialogBoxContainer/MarginContainer/VBoxContainer"]
+margin_top = 270.0
+margin_right = 1079.0
+margin_bottom = 298.0
+rect_min_size = Vector2( 0, 28 )
+custom_styles/panel = SubResource( 9 )
+
+[node name="UserControlIcons" type="Control" parent="TextureRect/HBoxContainer/Workspace/NinePatchRect/MarginContainer/VBoxContainer/DialogBoxContainer/MarginContainer/VBoxContainer/PanelContainer"]
+margin_left = 1079.0
+margin_top = 28.0
+margin_right = 1079.0
+margin_bottom = 28.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="TextureRect/HBoxContainer/Workspace/NinePatchRect/MarginContainer/VBoxContainer/DialogBoxContainer/MarginContainer/VBoxContainer/PanelContainer/UserControlIcons"]
+visible = false
+position = Vector2( -29, -15 )
+frames = SubResource( 8 )
+animation = "lmb"
+frame = 1
+speed_scale = 0.35
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="TextureRect/HBoxContainer/Workspace/NinePatchRect/MarginContainer/VBoxContainer/DialogBoxContainer/MarginContainer/VBoxContainer/PanelContainer/UserControlIcons"]
+position = Vector2( -15, -15 )
+frames = SubResource( 8 )
+animation = "enter"
+frame = 1
+speed_scale = 0.35
+playing = true
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="TextureRect/HBoxContainer/Workspace/NinePatchRect/MarginContainer/VBoxContainer/DialogBoxContainer/MarginContainer/VBoxContainer/PanelContainer/UserControlIcons"]
+position = Vector2( -85, -15 )
+frames = SubResource( 8 )
+animation = "space"
+frame = 1
+speed_scale = 0.35
+playing = true
+
+[node name="DescriptionPopup" type="Label" parent="TextureRect"]
+visible = false
+anchor_right = 0.691
+margin_left = 251.0
+margin_top = 26.0
+margin_right = 55.416
+margin_bottom = 58.0
+size_flags_vertical = 0
+custom_fonts/font = ExtResource( 8 )
+autowrap = true
+
+[node name="Panel" type="Panel" parent="TextureRect/DescriptionPopup"]
+modulate = Color( 1, 1, 1, 0.372549 )
+show_behind_parent = true
+margin_left = -2048.0
+margin_top = -1024.0
+margin_right = 2048.0
+margin_bottom = 1024.0
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/DescriptionPopup"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -1.0
+margin_bottom = -1.0
+custom_constants/margin_right = -8
+custom_constants/margin_top = -8
+custom_constants/margin_left = -12
+custom_constants/margin_bottom = -12
+
+[node name="NinePatchRect" type="NinePatchRect" parent="TextureRect/DescriptionPopup/MarginContainer"]
+margin_left = -12.0
+margin_top = -8.0
+margin_right = 756.0
+margin_bottom = 44.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 15.0
+texture = ExtResource( 1 )
+region_rect = Rect2( 209, 66, 46, 13 )
+patch_margin_left = 2
+patch_margin_top = 10
+patch_margin_right = 2
+patch_margin_bottom = 11
+
+[connection signal="pressed" from="TextureRect/HBoxContainer/Menus/ScenarioButtons/MarginContainer/VBoxContainer/Preface/Button" to="TextureRect/HBoxContainer/Menus/ScenarioButtons" method="_OnButtonPressed" binds= [ "0_preface" ]]
+[connection signal="pressed" from="TextureRect/HBoxContainer/Menus/ScenarioButtons/MarginContainer/VBoxContainer/1_a_Output/Button" to="TextureRect/HBoxContainer/Menus/ScenarioButtons" method="_OnButtonPressed" binds= [ "1_a_output" ]]
+[connection signal="pressed" from="TextureRect/HBoxContainer/Menus/ScenarioButtons/MarginContainer/VBoxContainer/Input/Button" to="TextureRect/HBoxContainer/Menus/ScenarioButtons" method="_OnButtonPressed" binds= [ "1_b_input" ]]
+[connection signal="pressed" from="TextureRect/HBoxContainer/Menus/ScenarioButtons/MarginContainer/VBoxContainer/Terms of Trade/Button" to="TextureRect/HBoxContainer/Menus/ScenarioButtons" method="_OnButtonPressed" binds= [ "2_terms_of_trade" ]]
+[connection signal="pressed" from="TextureRect/HBoxContainer/Menus/ScenarioButtons/MarginContainer/VBoxContainer/Practice Questions/Button" to="TextureRect/HBoxContainer/Menus/ScenarioButtons" method="_OnButtonPressed" binds= [ "3_practice_questions" ]]

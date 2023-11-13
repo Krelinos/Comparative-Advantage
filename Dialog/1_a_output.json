@@ -1,0 +1,78 @@
+{
+	"dialog": {
+		"start": "1a0",
+		"1a0": {
+			"text": "A farmer grows two types of crops: carrots and peas."
+			,"next": "1a1"
+		}
+		,"1a1": {
+			"text": "There are two plots of land the crops can be planted in: one with dark, nutrient-rich soil and another with light, nutrient-sparse soil."
+			,"next": "1a2"
+		}
+		,"1a2": {
+			"text": "If the dark soil grew only carrots OR peas, then it will produce 8 crates of carrots OR 12 crates of peas."
+			,"next": "1a3"
+		}
+		,"1a3": {
+			"text": "Likewise, the light soil will produce 5 crates of carrots OR 4 crates of peas."
+			,"next": "1a4"
+		}
+		,"1a4": {
+			"text": "Of these two plots, which has the [url][color=#E49F5A]absolute advantage[/color][/url] in both crops?"
+			,"next": "1a5"
+			,"concept": "absolute_advantage"
+			,"question": "1a4"
+		}
+		,"1a5": {
+			"text": "If the farmer were to plant only carrots in the light soil, the opportunity to plant peas would be sacrificed."
+			,"next": "1a6"
+		}
+		,"1a6": {
+			"text": "As such, the farmer gives up the opportunity to grow 4 crates of peas in exchange for 5 crates of carrots, or 0.8 crates of peas to obtain 1 crate of carrots (4 / 5 = 0.8)."
+			,"next": "1a7"
+		}
+		,"1a7": {
+			"text": "Alternatively, the farmer could plant peas, giving up the opportunity to grow 5 crates of carrots in exchange for 4 crates of peas, or 1.25 crates of carrots to obtain 1 crate of peas (5 / 4 = 1.25)."
+			,"next": "1a8"
+		}
+		,"1a8": {
+			"text": "What would be the [url][color=#E49F5A]opportunity cost[/color][/url] of the dark soil if the farmer grew carrots?"
+			,"next": ""
+			,"concept": "opportunity_cost_-_output"
+			,"question": "1a8"
+		}
+	}
+	
+	,"questions": {
+		"1a4": {
+			"type": "multiple_choice"
+			,"label": "The ___ has the absolute advantage in both carrots and peas."
+			,"content": [
+				"nutrient-rich soil"
+				,"nutrient-sparse soil"
+			]
+			,"feedback": [
+				"Correct! Press space or enter/return to continue."
+				,"Review the definition of absolute advantage by hovering your mouse over the term in the glossary."
+			]
+			,"correct": 0
+		}
+		,"1a8": {
+			"type": "multiple_choice"
+			,"label": "The opportunity cost to grow carrots in the dark soil would be ___ peas for 8 carrots, or ___ for 1 carrot."
+			,"content": [
+				"4, 3"
+				,"4, 0.33"
+				,"12, 0.67"
+				,"12, 1.5"
+			]
+			,"feedback": [
+				"You are considering the pea output of the light soil. Opportunity cost only considers the two goods of a single entity."
+				,"You are considering the pea output of the light soil. Opportunity cost only considers the two goods of a single entity."
+				,"You have incorrectly applied the equation regarding output. The equation is ( [The sacrificed good] / [The gained good] )"
+				,"Correct! Press space or enter/return to continue."
+			]
+			,"correct": 3
+		}
+	}
+}

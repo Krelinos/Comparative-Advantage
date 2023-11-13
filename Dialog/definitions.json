@@ -1,0 +1,16 @@
+{
+	"highlighted_text": "This is how I show information without cluttering the screen with things you may already have learned prior or during the use of this program."
+	,"absolute_advantage": "The capability of one entity to:
+- produce more goods (output)
+or
+- consume less resources to make a good (input)
+than another entity, given equal resources."
+	,"opportunity_cost_-_output": "The tradeoff in which an entity sacrifices the potential to produce a good in order to produce a more desirable good.
+
+For example, an entity can produce 4 units of Item A or 10 units of Item B. If the entity focused entirely on Item B, the opportunity cost would be the 4 units of Item A that the entity could have made instead.
+
+( As an aside, the entity could put any ratio into A or B, 75% to A and 25% to B for example, but then the opportunity cost would be 1 unit of A and 7.5 units of B. )"
+	,"opportunity_cost_(Input)": "The tradeoff in which an entity sacrifices the potential to commit resources toward in order to commit resources toward a more desirable good.
+
+For example, an entity can spend 35 resources to produce an Item A or 70 resources to produce an Item B. If the entity focused entirely on Item B, the opportunity cost would be the 2 units of Item A that the entity could have made instead."
+}
