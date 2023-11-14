@@ -8,7 +8,7 @@ A few things before moving on (press space or enter/return to continue):"
 			,"next": "1"
 		}
 		,"1": {
-			"text": "Important concepts will be depicted as [url][color=#E49F5A]highlighted text[/color][/url] within this text box."
+			"text": "Important concepts will be depicted as [color=#E49F5A]highlighted text[/color] within this text box."
 			,"next": "2"
 		}
 		,"2": {

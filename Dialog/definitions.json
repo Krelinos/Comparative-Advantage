@@ -13,4 +13,5 @@ For example, an entity can produce 4 units of Item A or 10 units of Item B. If t
 	,"opportunity_cost_(Input)": "The tradeoff in which an entity sacrifices the potential to commit resources toward in order to commit resources toward a more desirable good.
 
 For example, an entity can spend 35 resources to produce an Item A or 70 resources to produce an Item B. If the entity focused entirely on Item B, the opportunity cost would be the 2 units of Item A that the entity could have made instead."
+	,"comparative_advantage": "The condition in which an entity has a lower opportunity cost than another entity to produce a good."
 }

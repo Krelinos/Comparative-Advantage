@@ -66,7 +66,10 @@ namespace CompAdv
 			
 			// Clean the question box of the previous question
 			foreach ( Node child in QuestionBox.GetNode("MarginContainer").GetChildren() )
+			{
+				child.Name = "QueueFree-ed Node";
 				child.QueueFree();
+			}
 			
 			
 			// If there is text in this dialog, append to dialog box.
@@ -193,15 +196,24 @@ namespace CompAdv
 		
 		// User hits the "Submit" button
 		private void ChoiceSubmitted()
-		{
-			var feedback = QuestionBox.GetNode("MarginContainer").GetNodeOrNull<Label>("Feedback");
+		{	
+			foreach( Node c in QuestionBox.GetNodeOrNull("MarginContainer").GetChildren() )
+				GD.Print( c.Name );
+			var mChoice = QuestionBox.GetNodeOrNull("MarginContainer/MultipleChoice");
+			if ( mChoice == null )
+			{
+				GD.Print("Nah");
+				return;
+			}
+			GD.Print("Bruh");
+			var feedback = mChoice.GetNodeOrNull<Label>("Feedback");
 			if ( feedback == null )
 			{
 				feedback = new Label();
 				feedback.Name = "Feedback";
 				feedback.Autowrap = true;
 				feedback.SizeFlagsVertical = 0b1000;
-				QuestionBox.GetNode("MarginContainer").AddChild( feedback );
+				mChoice.AddChild( feedback );
 			}
 			GD.Print( Mathf.Abs(userAnswer - correctAnswer) );
 			if ( Mathf.Abs(userAnswer - correctAnswer) <= 0.001 )

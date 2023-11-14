@@ -2,7 +2,7 @@
 	"dialog": {
 		"start": "1a0",
 		"1a0": {
-			"text": "A farmer grows two types of crops: carrots and peas."
+			"text": "A farmer grows two types of crops: carrots and peas. They are trying to maximize the crop output of their land."
 			,"next": "1a1"
 		}
 		,"1a1": {
@@ -14,7 +14,7 @@
 			,"next": "1a3"
 		}
 		,"1a3": {
-			"text": "Likewise, the light soil will produce 5 crates of carrots OR 4 crates of peas."
+			"text": "Likewise, the light soil will produce 5 crates of carrots OR 10 crates of peas."
 			,"next": "1a4"
 		}
 		,"1a4": {
@@ -24,22 +24,41 @@
 			,"question": "1a4"
 		}
 		,"1a5": {
-			"text": "If the farmer were to plant only carrots in the light soil, the opportunity to plant peas would be sacrificed."
+			"text": "If the farmer were to plant only carrots in the light soil, the opportunity to plant peas would be sacrificed. This is known as the [color=#E49F5A]opportunity cost[/color]."
 			,"next": "1a6"
 		}
 		,"1a6": {
-			"text": "As such, the farmer gives up the opportunity to grow 4 crates of peas in exchange for 5 crates of carrots, or 0.8 crates of peas to obtain 1 crate of carrots (4 / 5 = 0.8)."
+			"text": "As such, the farmer gives up the opportunity to grow 10 crates of peas in exchange for 5 crates of carrots, or 2 crates of peas to obtain 1 crate of carrots (10 / 5 = 2)."
 			,"next": "1a7"
 		}
 		,"1a7": {
-			"text": "Alternatively, the farmer could plant peas, giving up the opportunity to grow 5 crates of carrots in exchange for 4 crates of peas, or 1.25 crates of carrots to obtain 1 crate of peas (5 / 4 = 1.25)."
+			"text": "Alternatively, the farmer could plant peas, giving up the opportunity to grow 5 crates of carrots in exchange for 10 crates of peas, or 0.5 crates of carrots to obtain 1 crate of peas (5 / 10 = 0.5)."
 			,"next": "1a8"
 		}
 		,"1a8": {
-			"text": "What would be the [url][color=#E49F5A]opportunity cost[/color][/url] of the dark soil if the farmer grew carrots?"
-			,"next": ""
+			"text": "What would be the [color=#E49F5A]opportunity cost[/color] of the dark soil be if the farmer grew carrots in it?"
+			,"next": "1a9"
 			,"concept": "opportunity_cost_-_output"
 			,"question": "1a8"
+		}
+		,"1a9": {
+			"text": "And what would be the opportunity cost of the dark soil be if the farmer grew peas in it?"
+			,"next": "1a10"
+			,"question": "1a9"
+		}
+		,"1a10": {
+			"text": "The table to the top right has been filled with the opportunity costs of both dark and light soil. When comparing two entites, whichever sacrifices less to obtain one unit of a good has the [color=#E49F5A]comparative advantage[/color]."
+			,"next": "1a11"
+			,"concept": "comparative_advantage"
+		}
+		,"1a11": {
+			"text": ""
+			,"next": "1a12"
+			,"question": "1a11"
+		}
+		,"1a12": {
+			"text": "You have completed 1.a - Output! Select scenario 1.b - Input at the bottom left to continue."
+			,"completed": "1_a_output"
 		}
 	}
 	
@@ -59,7 +78,7 @@
 		}
 		,"1a8": {
 			"type": "multiple_choice"
-			,"label": "The opportunity cost to grow carrots in the dark soil would be ___ peas for 8 carrots, or ___ for 1 carrot."
+			,"label": "The opportunity cost to grow carrots in the dark soil would be ___ peas for 8 carrots, or ___ peas for 1 carrot."
 			,"content": [
 				"4, 3"
 				,"4, 0.33"
@@ -73,6 +92,39 @@
 				,"Correct! Press space or enter/return to continue."
 			]
 			,"correct": 3
+		}
+		,"1a9": {
+			"type": "multiple_choice"
+			,"label": "The opportunity cost to grow peas in the dark soil would be 8 carrots for 12 peas, or ___ carrots for 1 pea."
+			,"content": [
+				"0.67"
+				,"1.5"
+			]
+			,"feedback": [
+				"Correct! Press space or enter/return to continue."
+				,"You have incorrectly applied the equation regarding output. The equation is ( [The sacrificed good] / [The gained good] )"
+			]
+			,"correct": 0
+		}
+		,"1a11": {
+			"type": "multiple_choice"
+			,"label": "Which of the following statements is true?"
+			,"content": [
+				"The dark soil has the absolute and comparative advantage in both crops."
+				,"Because the dark soil has the comparative advantage in carrots, the farmer should plant carrots in the dark soil and peas in the light soil."
+				,"Because the dark soil has the comparative advantage in peas, the farmer should plant peas in the dark soil and carrots in the light soil."
+				,"The farmer should not bother planting crops in the light soil because the dark soil has absolute advantage in both crops."
+				,"The farmer should just mix both soils together so they are equal and wouldn't have to be in this situation in the first place."
+			]
+			,"feedback": [
+				"Review the definition of comparative advantage and the opportunity costs in the table at the top right."
+				,"Review the definition of comparative advantage and the opportunity costs in the table at the top right."
+				,"Correct! Press space or enter/return to continue."
+				,"There is still value to be gained from land/countries with a smaller Production Possibility Curve, which will be seen in 2 - Terms of Trade."
+				,"Remember that this scenario is a stand-in for two countries' Production Possibility Curves and countries sure ain't mixing their economies any time soon.
+( The real answer is that the farmer is lazy. )"
+			]
+			,"correct": 2
 		}
 	}
 }
